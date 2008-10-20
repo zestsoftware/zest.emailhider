@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = open(os.path.join('zest', 'emailhider', "README.txt")
+version = open(os.path.join('zest', 'emailhider', "version.txt")
                ).read().strip()
 
 setup(name='zest.emailhider',
