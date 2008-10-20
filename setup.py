@@ -1,13 +1,16 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.0'
+version = open(os.path.join('zest', 'emailhider', "README.txt")
+               ).read().strip()
 
 setup(name='zest.emailhider',
       version=version,
       description="A simple KSS component for hiding email addreses from spammers.",
-      long_description=open("README.txt").read() + "\n" +
-                       open(os.path.join("docs", "HISTORY.txt")).read(),
+      long_description=(
+    open(os.path.join('zest', 'emailhider', "README.txt")).read()
+    + "\n" +
+    open(os.path.join("zest", "emailhider", "HISTORY.txt")).read()),
       # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
         "Framework :: Plone",
