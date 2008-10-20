@@ -1,14 +1,8 @@
-.. -*-rst-*-
-
 History of zest.emailhider package
 ==================================
 
 
 0.1 (unreleased)
-------------------
+-----------------
 
 - Initial creation of project. [simon]
-
-
-
-
