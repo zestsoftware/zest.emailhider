@@ -2,7 +2,7 @@ History of zest.emailhider package
 ==================================
 
 
-1.1 (unreleased)
+1.1 (2008-10-24)
 ----------------
 
 - Added translations and modified template to use them. [simon]
