@@ -1,6 +1,6 @@
 /* -*-kss-*- (starts file in kss mode) */
 
-a.hidden-email:onload {
+a.hidden-email:load {
     evt-click-preventdefault: true;
     action-server: revealEmail;
     revealEmail-uid: kssAttr('uid');
