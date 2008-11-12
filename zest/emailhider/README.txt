@@ -7,7 +7,9 @@ This document describes the zest.emailhider package.
 Dependencies
 ------------
 
-This package does not rely on other packages.
+This package depends on kss.plugin.cacheability to use GET requests instead of
+POST. Don't forget to add kss.plugin.cacheability to the zcml directive of your
+instance.
 
 
 Overview
