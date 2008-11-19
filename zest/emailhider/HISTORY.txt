@@ -2,7 +2,7 @@ History of zest.emailhider package
 ==================================
 
 
-1.2 (unreleased)
+1.2 (2008-11-19)
 ----------------
 
 - Using kss.plugin.cacheability and added it as a dependency.  [jladage]
