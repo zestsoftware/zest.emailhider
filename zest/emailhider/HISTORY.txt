@@ -5,7 +5,11 @@ History of zest.emailhider package
 1.2 (unreleased)
 ----------------
 
-- Changed the KSS voer to use the load event instead of the click event - it 
+- Using kss.plugin.cacheability and added it as a dependency.  [jladage]
+
+- Allow to set the uid to email_from_address.  [jladage]
+
+- Changed the KSS to use the load event instead of the click event - it 
   now either works transparently, or asks the user to activate JS. [simon]
 
 
