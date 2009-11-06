@@ -22,5 +22,5 @@
       permission="zope2.View"
       template="templates/emailhider.pt"
       />
-  
+
 </configure>
