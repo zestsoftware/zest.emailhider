@@ -8,8 +8,7 @@ Dependencies
 ------------
 
 This package depends on kss.plugin.cacheability to use GET requests instead of
-POST. Don't forget to add kss.plugin.cacheability to the zcml directive of your
-instance.
+POST.
 
 
 Overview
