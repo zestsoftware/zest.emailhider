@@ -15,7 +15,9 @@ class KSSEmailHider(PloneKSSView):
     @kssaction
     def reveal_email(self, uid):
         # Collect user using uid
-        if uid and uid == 'email_from_address':
+        if not uid:
+            return
+        if uid == 'email_from_address':
             portal_state = getMultiAdapter((self.context, self.request),
                                             name=u'plone_portal_state')
             portal = portal_state.portal()
