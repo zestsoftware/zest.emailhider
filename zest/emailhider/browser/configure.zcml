@@ -9,7 +9,7 @@
       />
 
   <page
-      for="..interfaces.IMailable"
+      for="*"
       class=".emailhider.KSSEmailHider"
       attribute="reveal_email"
       name="revealEmail"

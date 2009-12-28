@@ -28,7 +28,9 @@ class KSSEmailHider(PloneKSSView):
             if len(brains) != 1:
                 return
             target = brains[0].getObject()
-            mailable = IMailable(target)
+            mailable = IMailable(target, None)
+            if mailable is None:
+                return
             email = mailable.email
         email_link = u'<a href="mailto:%s">%s</a>' % (email, email)
         core = self.getCommandSet('core')
