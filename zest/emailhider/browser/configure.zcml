@@ -4,15 +4,15 @@
     i18n_domain="zest.emailhider">
 
   <resource
-      file="emailhider.kss"
-      name="emailhider.kss"
+      file="emailhider.js"
+      name="emailhider.js"
       />
 
   <page
       for="*"
-      class=".emailhider.KSSEmailHider"
+      class=".emailhider.JqEmailHider"
       attribute="reveal_email"
-      name="revealEmail"
+      name="jq_reveal_email"
       permission="zope2.View"
       />
 

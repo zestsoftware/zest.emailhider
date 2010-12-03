@@ -5,7 +5,9 @@ History of zest.emailhider package
 1.4 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Use jquery.pyproxy instead of KSS.  This makes the page load much
+  less for anonymous users.
+  [vincent+maurits]
 
 
 1.3 (2009-12-28)

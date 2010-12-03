@@ -7,24 +7,49 @@ This document describes the zest.emailhider package.
 Dependencies
 ------------
 
-This package depends on kss.plugin.cacheability to use GET requests instead of
-POST.
+This package depends on jquery.pyproxy to integrate python code with
+jquery code.  You need to install that package first in the
+portal_quickinstaller.
 
 
 Overview
 --------
 
-This package provides a mechanism to hide email addresses with KSS. Objects 
-display a placeholder link with a 'hidden-email' class and a 'uid' kss 
-attribute set to the UID of a user; a KSS click action is bound to the link 
-which replaces it with a 'mailto' link directed at the email address of the 
-user. Using this mechanism the email address isn't visible in the initial page 
-load, and it requires JavaScript to be seen - so it's much harder for spammers
-to harvest.
+This package provides a mechanism to hide email addresses with
+JavaScript.  Or actually: with this package you can hide your email
+addresses by default so they are never in the html; with javascript
+the addresses are then fetched and displayed.
 
-Object are marked with the IMailable interface - this states that they can 
-provide uid and email attributes. The 'emailhider' view is provided to 
-generate the placeholder link.
+Objects display a placeholder link with a ``hidden-email`` class, a
+``uid`` rel attribute and a ``email-uid-<some uid>`` class set to the
+UID of an object; when the page is loaded some jQuery is run to make a
+request for all those links to replace them with a 'mailto' link for
+that object.  Using this mechanism the email address isn't visible in
+the initial page load, and it requires JavaScript to be seen - so it
+iss much harder for spammers to harvest.
 
-Note: For publicly viewable email address, KSS must be made publicly 
-accessible.
+Object are marked with the IMailable interface - this states that they
+can provide uid and email attributes.  The 'emailhider' view is
+provided to generate the placeholder link.
+
+Special case: when the uid is 'email_from_address', we do nothing with
+the IMailable interface but just get the email_from_address from the
+portal property.  If you want to display this address in for example a
+static portlet, use this html code::
+
+  <a class="hidden-email email-uid-email_from_address"
+     href="mailto:nowhere" rel="email_from_address">
+     Activate JavaScript to see this address.</a>
+
+
+Note on KSS usage in older releases
+-----------------------------------
+
+Older releases (until and including 1.3) used KSS instead of jQuery.
+As our functionality should of course also work for anonymous users,
+we had to make KSS publicly accessible.  So all javascript that was
+needed for KSS was loaded for anonymous users as well.
+
+So you should check the javascript and kss registry and see if this
+needs to be undone so anonymous users no longer get the kss
+javascripts as they no longer need that.
