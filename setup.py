@@ -28,7 +28,7 @@ setup(name='zest.emailhider',
       zip_safe=False,
       install_requires=[
           'setuptools',
-	  'kss.plugin.cacheability',
+          'jquery.pyproxy'
           # -*- Extra requirements: -*-
       ],
       entry_points="""
