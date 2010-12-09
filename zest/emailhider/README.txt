@@ -89,6 +89,13 @@ to show the placeholder text instead of the real email address::
   <span>For more information contact us via email:</span>
   <span tal:replace="structure context/@@emailhider" />
 
+Note that the generated code in the template is very small, so you
+can also look at the page template in zest.emailhider and copy some
+code from there and change it to your own needs.  As long as your
+objects can be found by UID in the uid_catalog and your content type
+can be adapted to IMailable to get the email attribute, it should all
+work fine.
+
 
 Note on KSS usage in older releases
 -----------------------------------
