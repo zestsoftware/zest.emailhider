@@ -1,23 +1,23 @@
 from setuptools import setup, find_packages
 import os
 
-version = open(os.path.join('zest', 'emailhider', "version.txt")
-               ).read().strip()
+version = open(os.path.join(
+        'zest', 'emailhider', "version.txt")).read().strip()
 
 setup(name='zest.emailhider',
       version=version,
-      description="A simple KSS component for hiding email addreses from spammers.",
+      description=("A simple jQuery component for hiding email addresses from "
+                   "spammers."),
       long_description=(
-    open(os.path.join('zest', 'emailhider', "README.txt")).read()
-    + "\n" +
-    open(os.path.join("zest", "emailhider", "HISTORY.txt")).read()),
-      # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
+        open(os.path.join('zest', 'emailhider', "README.txt")).read()
+        + "\n" +
+        open(os.path.join("zest", "emailhider", "HISTORY.txt")).read()),
       classifiers=[
         "Framework :: Plone",
         "Programming Language :: Python",
         "Topic :: Software Development :: Libraries :: Python Modules",
         ],
-      keywords='zestsoftware email spamprotection kss',
+      keywords='zestsoftware email spamprotection javascript',
       author='Zest Software',
       author_email='s.hildebrandt@zestsoftware.nl',
       url='http://zestsoftware.nl',
@@ -29,7 +29,6 @@ setup(name='zest.emailhider',
       install_requires=[
           'setuptools',
           'jquery.pyproxy'
-          # -*- Extra requirements: -*-
       ],
       entry_points="""
       # -*- Entry points: -*-
