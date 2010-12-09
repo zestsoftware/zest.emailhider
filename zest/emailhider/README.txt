@@ -105,6 +105,23 @@ As our functionality should of course also work for anonymous users,
 we had to make KSS publicly accessible.  So all javascript that was
 needed for KSS was loaded for anonymous users as well.
 
-So you should check the javascript and kss registry and see if this
-needs to be undone so anonymous users no longer get the kss
-javascripts as they no longer need that.
+We cannot undo that automatically, as the package has no way of
+knowing if the same change was needed by some other package or was
+done for other valid reasons by a Manager.  So you should check the
+javascript registry in the ZMI and see if this needs to be undone so
+anonymous users no longer get the kss javascripts as they no longer
+need that.
+
+For reference, this is the normal line in the Condition field of
+``++resource++kukit.js`` (all on one line)::
+
+  python: not
+  here.restrictedTraverse('@@plone_portal_state').anonymous() and
+  here.restrictedTraverse('@@kss_devel_mode').isoff()
+
+and this is the normal line in the Condition field of
+``++resource++kukit-devel.js`` (all on one line)::
+
+  python: not
+  here.restrictedTraverse('@@plone_portal_state').anonymous() and
+  here.restrictedTraverse('@@kss_devel_mode').ison()
