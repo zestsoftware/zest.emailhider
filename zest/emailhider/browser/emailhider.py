@@ -7,6 +7,21 @@ from jquery.pyproxy.plone import jquery, JQueryProxy
 from jquery.pyproxy.base import clean_string
 
 
+class EmailHider(BrowserView):
+
+    def UID(self):
+        mailable = IMailable(self.context, None)
+        if mailable is None:
+            return
+        return mailable.UID()
+
+    def email(self):
+        mailable = IMailable(self.context, None)
+        if mailable is None:
+            return
+        return mailable.email
+
+
 class JqEmailHider(BrowserView):
     """jQuery view for revealing the email address of an object.
 

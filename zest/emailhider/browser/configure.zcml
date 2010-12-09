@@ -20,6 +20,7 @@
       for="..interfaces.IMailable"
       name="emailhider"
       permission="zope2.View"
+      class=".emailhider.EmailHider"
       template="templates/emailhider.pt"
       />
 

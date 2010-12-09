@@ -23,7 +23,7 @@ For every content item in your site you can have exactly one email
 address, as we look up the email address for an object by its UID.
 For objects for which you want this you should register a simple
 adapter to the IMailable interface, so we can ask this adapter for an
-``email`` and a ``uid`` attribute.   The 'emailhider' view is
+``email`` attribute and a ``UID`` method.   The 'emailhider' view is
 provided to generate the placeholder link.
 
 Objects display a placeholder link with a ``hidden-email`` class, a
@@ -37,11 +37,57 @@ is much harder for spammers to harvest.
 Special case: when the uid is 'email_from_address', we do nothing with
 the IMailable interface but just get the email_from_address from the
 portal property.  If you want to display this address in for example a
-static portlet, use this html code::
+static portlet on any page in the site, use this html code::
 
   <a class="hidden-email email-uid-email_from_address"
-     href="mailto:nowhere" rel="email_from_address">
+     rel="email_from_address">
      Activate JavaScript to see this address.</a>
+
+
+Instructions for your own package
+---------------------------------
+
+What do you need to do if you want to use this in your own package,
+for your own content type?
+
+First you need to make your content type adaptable to the IMailable
+interface, either directly or via an adapter.
+
+If your content type already has a ``UID`` method (like all Archetypes
+content types) and an ``email`` attribute, you can use some zcml like
+this::
+
+  <class class=".content.MyContentType">
+    <implements interface="zest.emailhider.interfaces.IMailable" />
+  </class>
+
+If not, then you need to register an adapter for your content type
+that has this method and attribute.  For example something like this::
+
+  from zope.component import adapts
+  from zope.interface import implements
+  from zest.emailhider.interfaces import IMailable
+  from your.package.interfaces import IMyContentType
+
+  class MailableAdapter(object):
+      adapts(IMyContentType)
+      implements(IMailable)
+
+      def __init__(self, context):
+          self.context = context
+
+      def UID(self):
+          return self.context.my_special_uid_attribute
+
+      @property
+      def email(self):
+          return self.context.getSomeContactAddress()
+
+Second, in the page template of your content type you need to add code
+to show the placeholder text instead of the real email address::
+
+  <span>For more information contact us via email:</span>
+  <span tal:replace="structure context/@@emailhider" />
 
 
 Note on KSS usage in older releases
