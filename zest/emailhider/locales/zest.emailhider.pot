@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2008-10-21 11:27+0000\n"
+"POT-Creation-Date: 2010-12-09 15:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,13 +17,8 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: zest.emailhider\n"
 
-#. Default: "[click to see address]"
-#: ./browser/templates/emailhider.pt:2
-msgid "link_text"
-msgstr ""
-
 #. Default: "Activate JavaScript to see this address."
-#: ./browser/templates/emailhider.pt:6
+#: ./browser/templates/emailhider.pt:2
 msgid "noscript_text"
 msgstr ""
 
