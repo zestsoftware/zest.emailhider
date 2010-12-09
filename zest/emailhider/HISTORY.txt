@@ -2,7 +2,7 @@ History of zest.emailhider package
 ==================================
 
 
-2.0 (unreleased)
+2.0 (2010-12-09)
 ----------------
 
 - Use jquery.pyproxy instead of KSS.  This makes the page load much
