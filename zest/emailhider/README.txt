@@ -8,8 +8,7 @@ Dependencies
 ------------
 
 This package depends on jquery.pyproxy to integrate python code with
-jquery code.  You need to install that package first in the
-portal_quickinstaller.
+jquery code.
 
 
 Overview
@@ -20,17 +19,20 @@ JavaScript.  Or actually: with this package you can hide your email
 addresses by default so they are never in the html; with javascript
 the addresses are then fetched and displayed.
 
+For every content item in your site you can have exactly one email
+address, as we look up the email address for an object by its UID.
+For objects for which you want this you should register a simple
+adapter to the IMailable interface, so we can ask this adapter for an
+``email`` and a ``uid`` attribute.   The 'emailhider' view is
+provided to generate the placeholder link.
+
 Objects display a placeholder link with a ``hidden-email`` class, a
 ``uid`` rel attribute and a ``email-uid-<some uid>`` class set to the
 UID of an object; when the page is loaded some jQuery is run to make a
 request for all those links to replace them with a 'mailto' link for
 that object.  Using this mechanism the email address isn't visible in
 the initial page load, and it requires JavaScript to be seen - so it
-iss much harder for spammers to harvest.
-
-Object are marked with the IMailable interface - this states that they
-can provide uid and email attributes.  The 'emailhider' view is
-provided to generate the placeholder link.
+is much harder for spammers to harvest.
 
 Special case: when the uid is 'email_from_address', we do nothing with
 the IMailable interface but just get the email_from_address from the
