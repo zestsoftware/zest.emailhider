@@ -11,4 +11,20 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
+  <genericsetup:upgradeStep
+      title="Install jquery.pyproxy"
+      description=""
+      source="2000"
+      destination="2001"
+      handler="zest.emailhider.migration.install_pyproxy"
+      profile="zest.emailhider:default" />
+
+  <genericsetup:upgradeStep
+      title="Run kss step"
+      description=""
+      source="2001"
+      destination="2002"
+      handler="zest.emailhider.migration.run_kss_step"
+      profile="zest.emailhider:default" />
+
 </configure>

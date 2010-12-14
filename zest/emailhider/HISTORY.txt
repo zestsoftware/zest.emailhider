@@ -5,7 +5,10 @@ History of zest.emailhider package
 2.1 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Added two upgrade steps to upgrade from 1.x by installing
+  jquery.pyproxy and running our kss step (which just removes our
+  no longer needed kss file).
+  [maurits]
 
 
 2.0 (2010-12-09)
