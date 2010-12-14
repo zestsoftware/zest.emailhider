@@ -27,4 +27,12 @@
       handler="zest.emailhider.migration.run_kss_step"
       profile="zest.emailhider:default" />
 
+  <genericsetup:upgradeStep
+      title="Run javascript step"
+      description=""
+      source="2002"
+      destination="2003"
+      handler="zest.emailhider.migration.run_javascript_step"
+      profile="zest.emailhider:default" />
+
 </configure>

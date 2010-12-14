@@ -5,7 +5,11 @@ History of zest.emailhider package
 2.2 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Added another upgrade step as we definitely need to apply our
+  javascript registry too when upgrading.  Really at this point a
+  plain reinstall in the portal_quickinstaller is actually fine, which
+  we could also define as upgrade step, but never mind that now.
+  [maurits]
 
 
 2.1 (2010-12-14)

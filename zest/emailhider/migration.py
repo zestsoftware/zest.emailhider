@@ -8,3 +8,7 @@ def install_pyproxy(context):
 
 def run_kss_step(context):
     context.runImportStepFromProfile(PROFILE_ID, 'kssregistry')
+
+
+def run_javascript_step(context):
+    context.runImportStepFromProfile(PROFILE_ID, 'jsregistry')

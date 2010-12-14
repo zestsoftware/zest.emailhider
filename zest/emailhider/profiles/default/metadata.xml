@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <metadata>
-  <version>2002</version>
+  <version>2003</version>
   <dependencies>
     <dependency>profile-jquery.pyproxy:default</dependency>
   </dependencies>
