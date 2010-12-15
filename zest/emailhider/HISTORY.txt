@@ -5,7 +5,11 @@ History of zest.emailhider package
 2.3 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Not only look up a fake uid for email_from_address as portal
+  property, but do this for any fake uid that has 'email' or 'address'
+  in it.  Log warnings when no email address can be found for a fake
+  or real uid.
+  [maurits]
 
 
 2.2 (2010-12-14)

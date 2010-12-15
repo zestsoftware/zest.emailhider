@@ -34,10 +34,13 @@ that object.  Using this mechanism the email address isn't visible in
 the initial page load, and it requires JavaScript to be seen - so it
 is much harder for spammers to harvest.
 
-Special case: when the uid is 'email_from_address', we do nothing with
-the IMailable interface but just get the email_from_address from the
-portal property.  If you want to display this address in for example a
-static portlet on any page in the site, use this html code::
+Special case: when the uid contains 'email' or 'address' it is clearly
+no real uid.  In that case we do nothing with the IMailable interface
+but we try to get a property with this 'uid' from the property sheet
+of the portal.  Main use case is of course the 'email_from_address',
+but you can add other addresses as well, like 'info_email'.  If you
+want to display the email_from address in for example a static portlet
+on any page in the site, use this html code::
 
   <a class="hidden-email email-uid-email_from_address"
      rel="email_from_address">
