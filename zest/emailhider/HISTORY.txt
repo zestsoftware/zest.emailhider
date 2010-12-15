@@ -2,7 +2,7 @@ History of zest.emailhider package
 ==================================
 
 
-2.3 (unreleased)
+2.3 (2010-12-15)
 ----------------
 
 - Not only look up a fake uid for email_from_address as portal
