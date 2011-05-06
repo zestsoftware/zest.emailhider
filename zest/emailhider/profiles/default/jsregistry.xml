@@ -6,5 +6,5 @@
               enabled="True"
               expression=""
               id="++resource++emailhider.js"
-              inline="True" />
+              inline="False" />
 </object>
