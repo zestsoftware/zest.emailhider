@@ -2,7 +2,7 @@ History of zest.emailhider package
 ==================================
 
 
-2.4 (unreleased)
+2.4 (2011-05-10)
 ----------------
 
 - Updated jquery.pyproxy dependency to at least 0.3.1 and removed the
