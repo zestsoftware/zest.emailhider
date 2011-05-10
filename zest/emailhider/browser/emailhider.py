@@ -6,7 +6,6 @@ from Products.CMFCore.utils import getToolByName
 from zest.emailhider.interfaces import IMailable
 
 from jquery.pyproxy.plone import jquery, JQueryProxy
-from jquery.pyproxy.base import clean_string
 
 logger = logging.getLogger('zest.emailhider')
 
@@ -73,7 +72,7 @@ class JqEmailHider(BrowserView):
             email_link = u''
 
         jq = JQueryProxy()
-        jq('.email-uid-%s' % uid).replaceWith(clean_string(email_link))
+        jq('.email-uid-%s' % uid).replaceWith(email_link)
 
         return jq
 

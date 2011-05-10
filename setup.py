@@ -28,7 +28,7 @@ setup(name='zest.emailhider',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          'jquery.pyproxy'
+          'jquery.pyproxy>=0.3.1'
       ],
       entry_points="""
       # -*- Entry points: -*-

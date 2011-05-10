@@ -5,7 +5,9 @@ History of zest.emailhider package
 2.4 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Updated jquery.pyproxy dependency to at least 0.3.1 and removed the
+  now no longer needed clean_string call.
+  [maurits]
 
 
 2.3 (2010-12-15)
