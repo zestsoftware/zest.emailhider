@@ -5,7 +5,8 @@ History of zest.emailhider package
 2.5 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Updated call to 'jq_reveal_email' to use the one at the root of the
+  site to avoid security errors. [vincent]
 
 
 2.4 (2011-05-10)
