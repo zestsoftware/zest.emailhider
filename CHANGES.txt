@@ -5,6 +5,10 @@ History of zest.emailhider package
 2.6 (2011-11-11)
 ----------------
 
+- Added MANIFEST.in so our generated .mo files are added to the source
+  distribution.
+  [maurits]
+
 - Register our browser views only for our own new browser layer.
   Added an upgrade step for this.  This makes it easier for other
   packages to have a conditional dependency on zest.emailhider.
