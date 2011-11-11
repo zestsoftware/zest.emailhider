@@ -11,7 +11,7 @@ setup(name='zest.emailhider',
       long_description=(
         open(os.path.join('zest', 'emailhider', "README.txt")).read()
         + "\n" +
-        open(os.path.join("zest", "emailhider", "HISTORY.txt")).read()),
+        open("CHANGES.txt").read()),
       classifiers=[
         "Framework :: Plone",
         "Programming Language :: Python",
