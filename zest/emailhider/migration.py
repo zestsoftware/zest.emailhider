@@ -12,3 +12,7 @@ def run_kss_step(context):
 
 def run_javascript_step(context):
     context.runImportStepFromProfile(PROFILE_ID, 'jsregistry')
+
+
+def run_browserlayer_step(context):
+    context.runImportStepFromProfile(PROFILE_ID, 'browserlayer')

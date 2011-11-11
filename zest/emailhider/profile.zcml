@@ -35,4 +35,12 @@
       handler="zest.emailhider.migration.run_javascript_step"
       profile="zest.emailhider:default" />
 
+  <genericsetup:upgradeStep
+      title="Run browserlayer step"
+      description=""
+      source="2003"
+      destination="2004"
+      handler="zest.emailhider.migration.run_browserlayer_step"
+      profile="zest.emailhider:default" />
+
 </configure>

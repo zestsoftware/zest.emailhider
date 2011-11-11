@@ -14,6 +14,7 @@
       attribute="reveal_email"
       name="jq_reveal_email"
       permission="zope2.View"
+      layer="zest.emailhider.interfaces.IZestEmailHiderLayer"
       />
 
   <page
@@ -22,6 +23,7 @@
       permission="zope2.View"
       class=".emailhider.EmailHider"
       template="templates/emailhider.pt"
+      layer="zest.emailhider.interfaces.IZestEmailHiderLayer"
       />
 
 </configure>

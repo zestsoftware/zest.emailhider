@@ -92,6 +92,19 @@ to show the placeholder text instead of the real email address::
   <span>For more information contact us via email:</span>
   <span tal:replace="structure context/@@emailhider" />
 
+Note that if you want this to still work when zest.emailhider is not
+installed, you can use this code instead::
+
+  <span tal:replace="structure context/@@emailhider|context/email" />
+
+This shows the unprotected plain text email when zest.emailhider is is
+not available.  When you are using zest.emailhider 2.6 or higher this
+works a bit better, as we have introduced an own browser layer: the
+@@emailhider page is only available when zest.emailhider is actually
+installed in the Plone Site.  This also makes it safe to use
+zest.emailhider when you have more than one Plone Site in a single
+Zope instance and want emailhider to only be used in one them.
+
 Note that the generated code in the template is very small, so you
 can also look at the page template in zest.emailhider and copy some
 code from there and change it to your own needs.  As long as your

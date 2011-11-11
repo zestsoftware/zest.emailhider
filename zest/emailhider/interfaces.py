@@ -11,3 +11,11 @@ class IMailable(Interface):
         pass
 
     email = Attribute('email')
+
+
+class IZestEmailHiderLayer(Interface):
+    """Browser layer marker interface.
+
+    plone.browserlayer adds this to the request when our package is
+    installed in the Plone Site.
+    """
