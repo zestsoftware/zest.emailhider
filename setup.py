@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 import os
 
 setup(name='zest.emailhider',
-      version='2.7',
+      version='2.8.dev0',
       description=("A simple jQuery component for hiding email addresses from "
                    "spammers."),
       long_description=(
