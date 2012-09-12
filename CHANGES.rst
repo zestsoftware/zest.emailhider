@@ -5,7 +5,8 @@ History of zest.emailhider package
 2.7 (2012-09-12)
 ----------------
 
-- Nothing changed yet.
+- Moved to github.
+  [maurits]
 
 
 2.6 (2011-11-11)
