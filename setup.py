@@ -9,7 +9,7 @@ setup(name='zest.emailhider',
       description=("A simple jQuery component for hiding email addresses from "
                    "spammers."),
       long_description=(
-        open(os.path.join('zest', 'emailhider', "README.txt")).read()
+        open("README.txt").read()
         + "\n" +
         open("CHANGES.rst").read()),
       classifiers=[
