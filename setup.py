@@ -1,11 +1,8 @@
 from setuptools import setup, find_packages
 import os
 
-version = open(os.path.join(
-        'zest', 'emailhider', "version.txt")).read().strip()
-
 setup(name='zest.emailhider',
-      version=version,
+      version='2.7.dev0',
       description=("A simple jQuery component for hiding email addresses from "
                    "spammers."),
       long_description=(
