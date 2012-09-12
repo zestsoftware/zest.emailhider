@@ -19,8 +19,8 @@ setup(name='zest.emailhider',
         ],
       keywords='zestsoftware email spamprotection javascript',
       author='Zest Software',
-      author_email='s.hildebrandt@zestsoftware.nl',
-      url='http://zestsoftware.nl',
+      author_email='info@zestsoftware.nl',
+      url='https://github.com/zestsoftware/zest.emailhider',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['zest'],
@@ -32,5 +32,8 @@ setup(name='zest.emailhider',
       ],
       entry_points="""
       # -*- Entry points: -*-
+
+      [z3c.autoinclude.plugin]
+      target = plone
       """,
       )
