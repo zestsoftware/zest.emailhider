@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from jquery.pyproxy.plone import jquery, JQueryProxy
 from plone.registry.interfaces import IRegistry
 from Products.CMFCore.utils import getToolByName

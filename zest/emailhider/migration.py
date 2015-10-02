@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 PROFILE_ID = 'profile-zest.emailhider:default'
 
 
