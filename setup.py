@@ -31,6 +31,12 @@ setup(name='zest.emailhider',
           'jquery.pyproxy>=0.3.1',
           'plone.registry',
       ],
+      extras_require={
+          'test': [
+              'plone.app.testing',
+              'plone.app.robotframework[debug]',
+          ],
+      },
       entry_points="""
       # -*- Entry points: -*-
 
