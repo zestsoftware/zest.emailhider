@@ -3,6 +3,9 @@ Zest emailhider
 
 This document describes the zest.emailhider package.
 
+.. image:: https://secure.travis-ci.org/zestsoftware/zest.emailhider.png?branch=master
+  :target: https://travis-ci.org/#!/zestsoftware/zest.emailhider
+
 
 Dependencies
 ------------

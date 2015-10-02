@@ -5,6 +5,9 @@ History of zest.emailhider package
 3.0 (unreleased)
 ----------------
 
+- Added Travis badge.
+  [maurits]
+
 - Support Plone 5 by reading ``plone.email_from_address`` from the
   registry.  This loses compatibility with Plone 4.0.  We try reading
   any email (also your own additional emails) from the registry first,
