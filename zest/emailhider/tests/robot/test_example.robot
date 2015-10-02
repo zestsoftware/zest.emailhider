@@ -14,7 +14,7 @@
 #
 # 2) Run robot tests:
 #
-# $ bin/robot src/zest/emailhider/tests/robot/test_example.robot
+# $ bin/robot zest/emailhider/tests/robot/test_example.robot
 #
 # See the http://docs.plone.org for further details (search for robot
 # framework).
@@ -34,33 +34,22 @@ Test Teardown  Close all browsers
 
 *** Test Cases ***************************************************************
 
-Scenario: As a member I want to be able to log into the website
-  [Documentation]  Example of a BDD-style (Behavior-driven development) test.
-  Given a login form
-   When I enter valid credentials
-   Then I am logged in
+Scenario: As anonymous user I want to be able to see an email address I can see it because I have Javascript enabled.
+
+  Given an emailhider test page
+   Then I see the main email address of the website
 
 
 *** Keywords *****************************************************************
 
 # --- Given ------------------------------------------------------------------
 
-a login form
-  Go To  ${PLONE_URL}/login_form
-  Wait until page contains  Login Name
-  Wait until page contains  Password
-
-
-# --- WHEN -------------------------------------------------------------------
-
-I enter valid credentials
-  Input Text  __ac_name  admin
-  Input Text  __ac_password  secret
-  Click Button  Log in
+an emailhider test page
+  Go To  ${PLONE_URL}/test_emailhider
+  Wait until page contains  zest.emailhider test page
 
 
 # --- THEN -------------------------------------------------------------------
 
-I am logged in
-  Wait until page contains  You are now logged in
-  Page should contain  You are now logged in
+Then I see the main email address of the website
+  Wait until page contains  info@example.org

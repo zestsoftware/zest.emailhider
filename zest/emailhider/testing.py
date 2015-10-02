@@ -5,7 +5,9 @@ from plone.app.testing import FunctionalTesting
 from plone.app.testing import IntegrationTesting
 from plone.app.testing import PLONE_FIXTURE
 from plone.app.testing import PloneSandboxLayer
+from plone.registry.interfaces import IRegistry
 from plone.testing import z2
+from zope.component import getUtility
 
 import zest.emailhider
 
@@ -19,6 +21,13 @@ class ZestEmailhiderLayer(PloneSandboxLayer):
 
     def setUpPloneSite(self, portal):
         applyProfile(portal, 'zest.emailhider:default')
+        if portal.hasProperty('email_from_address'):
+            # Plone 4
+            portal._updateProperty('email_from_address', 'info@example.org')
+        else:
+            # Plone 5
+            registry = getUtility(IRegistry)
+            registry['plone.email_from_address'] = 'info@example.org'
 
 
 ZEST_EMAILHIDER_FIXTURE = ZestEmailhiderLayer()

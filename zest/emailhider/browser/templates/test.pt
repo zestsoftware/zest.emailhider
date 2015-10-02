@@ -6,7 +6,7 @@
       metal:use-macro="context/main_template/macros/master"
       i18n:domain="zest.emailhider">
   <body>
-    <metal:content fill-slot="content">
+    <metal:content fill-slot="main">
       <h1>zest.emailhider test page</h1>
       <p>
         When you disable JavaScript in your browser, you will not see

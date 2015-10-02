@@ -22,4 +22,4 @@ class TestView(unittest.TestCase):
             self.portal.absolute_url() + '/test_emailhider')
         contents = self.browser.contents
         open('/tmp/test.html', 'w').write(self.browser.contents)
-        self.assertNotIn('html', contents)
+        self.assertNotIn('info@example.org', contents)
