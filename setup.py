@@ -5,10 +5,8 @@ setup(name='zest.emailhider',
       version='2.8.dev0',
       description=("A simple jQuery component for hiding email addresses from "
                    "spammers."),
-      long_description=(
-        open("README.txt").read()
-        + "\n" +
-        open("CHANGES.rst").read()),
+      long_description=(open("README.rst").read() + "\n" +
+                        open("CHANGES.rst").read()),
       classifiers=[
         "Framework :: Plone",
         "Framework :: Plone :: 3.3",
