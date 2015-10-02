@@ -52,7 +52,7 @@ class JqEmailHider(BrowserView):
             # This is definitely not a real uid.  Try to get it as a
             # portal property.  Best example: email_from_address.
             portal_state = getMultiAdapter((self.context, self.request),
-                                            name=u'plone_portal_state')
+                                           name=u'plone_portal_state')
             portal = portal_state.portal()
             email = portal.getProperty(uid)
             if email:
