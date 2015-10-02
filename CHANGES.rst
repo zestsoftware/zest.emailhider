@@ -112,7 +112,7 @@ History of zest.emailhider package
 
 - Allow to set the uid to email_from_address.  [jladage]
 
-- Changed the KSS to use the load event instead of the click event - it 
+- Changed the KSS to use the load event instead of the click event - it
   now either works transparently, or asks the user to activate JS. [simon]
 
 

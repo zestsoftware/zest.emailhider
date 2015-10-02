@@ -143,3 +143,16 @@ and this is the normal line in the Condition field of
   python: not
   here.restrictedTraverse('@@plone_portal_state').anonymous() and
   here.restrictedTraverse('@@kss_devel_mode').ison()
+
+
+Compatibility
+-------------
+
+Version 3.0 should work on Plone 4.1, 4.2, 4.3, 5.0.
+
+For older Plone versions, please stick to the 2.x line.  Latest
+release as of writing is 2.7.
+
+Note that on Plone 5.0 we are not completely modern: we register our
+css and javascript in the old portal tools, not in the new resource
+registry.  So it ends up in the Plone legacy bundle.
