@@ -1,21 +1,24 @@
 from setuptools import setup, find_packages
-import os
 
 setup(name='zest.emailhider',
       version='2.8.dev0',
-      description=("A simple jQuery component for hiding email addresses from "
-                   "spammers."),
+      description=("A simple jQuery Plone component for hiding email "
+                   "addresses from spammers."),
       long_description=(open("README.rst").read() + "\n" +
                         open("CHANGES.rst").read()),
       classifiers=[
-        "Framework :: Plone",
-        "Framework :: Plone :: 3.3",
-        "Framework :: Plone :: 4.0",
-        "Framework :: Plone :: 4.1",
-        "Framework :: Plone :: 4.2",
-        "Programming Language :: Python",
-        "Topic :: Software Development :: Libraries :: Python Modules",
-        ],
+          "Framework :: Plone",
+          "Framework :: Plone :: 3.3",
+          "Framework :: Plone :: 4.0",
+          "Framework :: Plone :: 4.1",
+          "Framework :: Plone :: 4.2",
+          "Framework :: Plone :: 4.3",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 2.4",
+          "Programming Language :: Python :: 2.6",
+          "Programming Language :: Python :: 2.7",
+          "Topic :: Software Development :: Libraries :: Python Modules",
+          ],
       keywords='zestsoftware email spamprotection javascript',
       author='Zest Software',
       author_email='info@zestsoftware.nl',
