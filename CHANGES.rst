@@ -5,7 +5,11 @@ History of zest.emailhider package
 3.0 (unreleased)
 ----------------
 
-- Support Plone 5 by reading ``email_from_address`` from registry.
+- Support Plone 5 by reading ``plone.email_from_address`` from the
+  registry.  This loses compatibility with Plone 4.0.  We try reading
+  any email (also your own additional emails) from the registry first,
+  with ``plone.`` prepended, and then look for a property on the
+  portal root.
   [maurits]
 
 - Use ``$`` instead of ``jq`` in our javascript.  Now it works without

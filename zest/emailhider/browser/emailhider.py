@@ -1,18 +1,11 @@
 from jquery.pyproxy.plone import jquery, JQueryProxy
+from plone.registry.interfaces import IRegistry
 from Products.CMFCore.utils import getToolByName
 from Products.Five import BrowserView
 from zest.emailhider.interfaces import IMailable
 from zope.component import getMultiAdapter
 from zope.component import getUtility
 import logging
-try:
-    from Products.CMFPlone.interfaces import IMailSchema  # noqa
-    from plone.registry.interfaces import IRegistry
-    # We need to get email_from_address from the registry.
-    PLONE5 = True
-except ImportError:
-    # We need to get email_from_address as portal property.
-    PLONE5 = False
 
 logger = logging.getLogger('zest.emailhider')
 
@@ -56,20 +49,27 @@ class JqEmailHider(BrowserView):
 
         email = None
         if 'email' in uid or 'address' in uid:
-            # This is definitely not a real uid.  Try to get it as a
-            # portal property.  Best example: email_from_address.
-            if PLONE5:
-                registry = getUtility(IRegistry)
-                email = registry.get('plone.' + uid, '')
+            # This is definitely not a real uid.  Try to get it from
+            # the registry or as a portal property.  Best example:
+            # email_from_address.
+            registry = getUtility(IRegistry)
+            # Mostly Plone 5 and higher, although you can add
+            # plone.email_from_address or plone.some_email in the
+            # registry yourself on earlier Plone versions.
+            email = registry.get('plone.' + uid, '')
+            if email:
+                logger.debug("From registry: plone.%s=%s", uid, email)
             else:
+                # Backwards compatibility for Plone 4.
                 portal_state = getMultiAdapter((self.context, self.request),
                                                name=u'plone_portal_state')
                 portal = portal_state.portal()
                 email = portal.getProperty(uid)
-            if email:
-                logger.debug("From portal: %s=%s", uid, email)
-            else:
-                logger.warn("No portal property %s", uid)
+                if email:
+                    logger.debug("From portal property: %s=%s", uid, email)
+                else:
+                    logger.warn("No registry entry plone.%s or portal "
+                                "property %s.", uid, uid)
         else:
             email = self.find_email_for_object_by_uid(uid)
 

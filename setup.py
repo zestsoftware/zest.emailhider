@@ -8,7 +8,6 @@ setup(name='zest.emailhider',
                         open("CHANGES.rst").read()),
       classifiers=[
           "Framework :: Plone",
-          "Framework :: Plone :: 4.0",
           "Framework :: Plone :: 4.1",
           "Framework :: Plone :: 4.2",
           "Framework :: Plone :: 4.3",
@@ -29,7 +28,8 @@ setup(name='zest.emailhider',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          'jquery.pyproxy>=0.3.1'
+          'jquery.pyproxy>=0.3.1',
+          'plone.registry',
       ],
       entry_points="""
       # -*- Entry points: -*-
