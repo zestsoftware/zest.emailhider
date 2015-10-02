@@ -35,6 +35,7 @@ setup(name='zest.emailhider',
           'test': [
               'plone.app.testing',
               'plone.app.robotframework[debug]',
+              'plone.api',
           ],
       },
       entry_points="""
