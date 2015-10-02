@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 """Setup tests for this package."""
-from plone import api
 from plone.testing.z2 import Browser
 from zest.emailhider.testing import ZEST_EMAILHIDER_FUNCTIONAL_TESTING
 
