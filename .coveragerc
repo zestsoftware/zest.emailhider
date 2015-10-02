@@ -1,0 +1,6 @@
+[report]
+include =
+    zest/*
+omit =
+    */test*
+    */upgrades/*
