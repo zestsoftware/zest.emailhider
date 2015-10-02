@@ -5,6 +5,9 @@ History of zest.emailhider package
 3.0 (unreleased)
 ----------------
 
+- Support Plone 5 by reading ``email_from_address`` from registry.
+  [maurits]
+
 - Use ``$`` instead of ``jq`` in our javascript.  Now it works without
   needing ``jquery-integration.js``.  This loses compatibility with
   Plone 3.

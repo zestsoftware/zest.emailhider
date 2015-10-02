@@ -1,11 +1,18 @@
-import logging
-
-from zope.component import getMultiAdapter
-from Products.Five import BrowserView
-from Products.CMFCore.utils import getToolByName
-from zest.emailhider.interfaces import IMailable
-
 from jquery.pyproxy.plone import jquery, JQueryProxy
+from Products.CMFCore.utils import getToolByName
+from Products.Five import BrowserView
+from zest.emailhider.interfaces import IMailable
+from zope.component import getMultiAdapter
+from zope.component import getUtility
+import logging
+try:
+    from Products.CMFPlone.interfaces import IMailSchema  # noqa
+    from plone.registry.interfaces import IRegistry
+    # We need to get email_from_address from the registry.
+    PLONE5 = True
+except ImportError:
+    # We need to get email_from_address as portal property.
+    PLONE5 = False
 
 logger = logging.getLogger('zest.emailhider')
 
@@ -51,10 +58,14 @@ class JqEmailHider(BrowserView):
         if 'email' in uid or 'address' in uid:
             # This is definitely not a real uid.  Try to get it as a
             # portal property.  Best example: email_from_address.
-            portal_state = getMultiAdapter((self.context, self.request),
-                                           name=u'plone_portal_state')
-            portal = portal_state.portal()
-            email = portal.getProperty(uid)
+            if PLONE5:
+                registry = getUtility(IRegistry)
+                email = registry.get('plone.' + uid, '')
+            else:
+                portal_state = getMultiAdapter((self.context, self.request),
+                                               name=u'plone_portal_state')
+                portal = portal_state.portal()
+                email = portal.getProperty(uid)
             if email:
                 logger.debug("From portal: %s=%s", uid, email)
             else:
