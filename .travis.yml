@@ -22,6 +22,8 @@ install:
   - sed -ie "s#release/5.0#release/$PLONE_MINOR_VERSION#" buildout.cfg
   - sed -ie "s#travis-5.x#travis-$PLONE_MAJOR_VERSION#" travis.cfg
   - python bootstrap-buildout.py -c travis.cfg
+# Try this twice, as first time could fail with strange setuptools error.
+  - bin/buildout -Nc travis.cfg || true
   - bin/buildout -Nc travis.cfg
 script:
   - bin/code-analysis
