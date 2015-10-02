@@ -2,8 +2,13 @@ History of zest.emailhider package
 ==================================
 
 
-2.8 (unreleased)
+3.0 (unreleased)
 ----------------
+
+- Use ``$`` instead of ``jq`` in our javascript.  Now it works without
+  needing ``jquery-integration.js``.  This loses compatibility with
+  Plone 3.
+  [maurits]
 
 - Added ``test_emailhider`` page that hides the portal
   ``email_from_address``, so you can easily test it.  When you disable
