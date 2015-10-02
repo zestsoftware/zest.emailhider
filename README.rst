@@ -46,6 +46,8 @@ on any page in the site, use this html code::
      rel="email_from_address">
      Activate JavaScript to see this address.</a>
 
+You can load the ``test_emailhider`` page to see if this works.
+
 
 Instructions for your own package
 ---------------------------------

@@ -5,7 +5,10 @@ History of zest.emailhider package
 2.8 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Added ``test_emailhider`` page that hides the portal
+  ``email_from_address``, so you can easily test it.  When you disable
+  your javascript you should not see an email address.
+  [maurits]
 
 
 2.7 (2012-09-12)
