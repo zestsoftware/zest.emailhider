@@ -8,8 +8,8 @@ python:
   - 2.7
 env:
   matrix:
-    - PLONE_MINOR_VERSION=4.3.7 PLONE_MAJOR_VERSION=4.3.x
-    - PLONE_MINOR_VERSION=5.0 PLONE_MAJOR_VERSION=5.x
+    - PLONE_MINOR_VERSION=4.3-latest PLONE_MAJOR_VERSION=4.3.x
+    - PLONE_MINOR_VERSION=5.0-latest PLONE_MAJOR_VERSION=5.0.x
 matrix:
   fast_finish: true
 before_install:
@@ -19,12 +19,12 @@ before_install:
   - echo "download-cache = $HOME/buildout-cache/downloads" >> $HOME/.buildout/default.cfg
   - echo "eggs-directory = $HOME/buildout-cache/eggs" >> $HOME/.buildout/default.cfg
 install:
-  - sed -ie "s#release/5.0#release/$PLONE_MINOR_VERSION#" buildout.cfg
-  - sed -ie "s#travis-5.x#travis-$PLONE_MAJOR_VERSION#" travis.cfg
+  - sed -ie "s#release/5.0-latest#release/$PLONE_MINOR_VERSION#" buildout.cfg
+  - sed -ie "s#travis-5.0.x#travis-$PLONE_MAJOR_VERSION#" travis.cfg
   - python bootstrap-buildout.py -c travis.cfg
 # Try this twice, as first time could fail with strange setuptools error.
-  - bin/buildout -Nc travis.cfg || true
-  - bin/buildout -Nc travis.cfg
+  - bin/buildout -c travis.cfg || true
+  - bin/buildout -c travis.cfg
 script:
   - bin/code-analysis
   - bin/test
