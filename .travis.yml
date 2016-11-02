@@ -21,13 +21,22 @@ before_install:
 install:
   - sed -ie "s#release/5.0-latest#release/$PLONE_MINOR_VERSION#" buildout.cfg
   - sed -ie "s#travis-5.0.x#travis-$PLONE_MAJOR_VERSION#" travis.cfg
-  - python bootstrap-buildout.py -c travis.cfg
+# Keep setuptools and zc.buildout versions in sync with buildout.cfg.
+  - python bootstrap-buildout.py --setuptools-version=28.7.1 --buildout-version=2.5.3 -c travis.cfg
 # Try this twice, as first time could fail with strange setuptools error.
   - bin/buildout -c travis.cfg || true
   - bin/buildout -c travis.cfg
+# before_script:
+#   - export DISPLAY=:99.0
+#   - sh -e /etc/init.d/xvfb start
+#   - firefox -v
 script:
   - bin/code-analysis
   - bin/test
+# Use --all when robot tests work on Plone 5.  It works in practice, but not in the tests.
+# Switching to the new resource registries would probably help.
+# We would need to do that for jquery.pyproxy as well then.
+#   - bin/test --all
 after_success:
   - bin/createcoverage
   - pip install coveralls
