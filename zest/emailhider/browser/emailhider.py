@@ -44,10 +44,25 @@ class JqEmailHider(BrowserView):
 
     @jquery
     def reveal_email(self):
-        uid = self.request.form.get('uid', None)
-        if not uid:
-            return
+        # single uid
+        uids = self.request.form.get('uid', None)
+        if not uids:
+            # With multiple uids the name looks a bit weird.
+            uids = self.request.form.get('uid[]', None)
+            if not uids:
+                # Nothing to do.  Strange.
+                logger.error('No uids found in request.')
+                # Return an answer anyway, otherwise you get errors in the
+                # javascript console.
+                return JQueryProxy()
+        if isinstance(uids, basestring):
+            uids = [uids]
+        jq = JQueryProxy()
+        for uid in uids:
+            jq = self.handle_single_email(uid, jq)
+        return jq
 
+    def handle_single_email(self, uid, jq):
         email = None
         if 'email' in uid or 'address' in uid:
             # This is definitely not a real uid.  Try to get it from
@@ -83,14 +98,16 @@ class JqEmailHider(BrowserView):
             # We could add a <!-- comment --> but jQuery ignores this.
             email_link = u''
 
-        jq = JQueryProxy()
         jq('.email-uid-%s' % uid).replaceWith(email_link)
-
         return jq
 
     def find_email_for_object_by_uid(self, uid):
+        # Get catalog only once per request.
+        catalog = getattr(self, '_uid_catalog', None)
+        if catalog is None:
+            catalog = getToolByName(self.context, 'uid_catalog')
+            self._uid_catalog = catalog
         # Find object by uid
-        catalog = getToolByName(self.context, 'uid_catalog')
         brains = catalog(UID=uid)
         if len(brains) != 1:
             logger.warn("No brains for uid %s", uid)
