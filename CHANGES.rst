@@ -5,7 +5,11 @@ History of zest.emailhider package
 3.1 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Query and reveal all emails at once.  If you have an employee
+  content type that you have hooked up to zest.emailhider, and you
+  have a page showing fifty employees, previously we would fire fifty
+  ajax requests.  Now we gather everything into one request.
+  [maurits]
 
 
 3.0 (2015-10-03)
