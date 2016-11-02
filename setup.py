@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(name='zest.emailhider',
-      version='3.1.dev0',
+      version='3.1',
       description=("A simple jQuery Plone component for hiding email "
                    "addresses from spammers."),
       long_description=(open("README.rst").read() + "\n" +

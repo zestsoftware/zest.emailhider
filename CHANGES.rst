@@ -2,7 +2,7 @@ History of zest.emailhider package
 ==================================
 
 
-3.1 (unreleased)
+3.1 (2016-11-02)
 ----------------
 
 - Query and reveal all emails at once.  If you have an employee
