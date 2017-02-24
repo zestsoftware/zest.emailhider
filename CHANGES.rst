@@ -5,7 +5,8 @@ History of zest.emailhider package
 3.1.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fixed javascript bug that caused a request even without any emails to reveal.
+  [maurits]
 
 
 3.1 (2016-11-02)

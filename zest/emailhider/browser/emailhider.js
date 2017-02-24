@@ -10,7 +10,7 @@ $(document).ready(function() {
   $('a.hidden-email').each(function() {
     uids.push($(this).attr('rel'));
   });
-  if (uids) {
+  if (uids.length) {
     $.pyproxy_call(reveal_url, {'uid': uids});
   }
 });
