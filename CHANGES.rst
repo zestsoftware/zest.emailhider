@@ -2,6 +2,12 @@ History of zest.emailhider package
 ==================================
 
 
+3.1.3 (unreleased)
+------------------
+
+- Nothing changed yet.
+
+
 3.1.2 (2017-03-08)
 ------------------
 
