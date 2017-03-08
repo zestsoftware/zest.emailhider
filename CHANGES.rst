@@ -5,7 +5,13 @@ History of zest.emailhider package
 3.1.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Do not render our javascript inline.  It leads to display problems
+  when it is included on a 404 page or any other non 20x page:
+  an assertion in ``Products.ResourceRegistries`` fails, resulting in
+  the html being returned with mimetype javascript.
+  That seems a possible problem with any inline script.
+  Added upgrade step for this.
+  [maurits]
 
 
 3.1.1 (2017-02-24)
