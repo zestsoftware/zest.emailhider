@@ -2,7 +2,7 @@ History of zest.emailhider package
 ==================================
 
 
-3.1.2 (unreleased)
+3.1.2 (2017-03-08)
 ------------------
 
 - Do not render our javascript inline.  It leads to display problems
