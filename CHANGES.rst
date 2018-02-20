@@ -2,7 +2,7 @@ History of zest.emailhider package
 ==================================
 
 
-3.1.3 (unreleased)
+3.1.3 (2018-02-20)
 ------------------
 
 - Make 'No uids found in request.' a warning instead of an error.
