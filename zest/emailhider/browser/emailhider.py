@@ -51,7 +51,8 @@ class JqEmailHider(BrowserView):
             uids = self.request.form.get('uid[]', None)
             if not uids:
                 # Nothing to do.  Strange.
-                logger.error('No uids found in request.')
+                # Well, happens when a bot finds this url interesting.
+                logger.warning('No uids found in request.')
                 # Return an answer anyway, otherwise you get errors in the
                 # javascript console.
                 return JQueryProxy()

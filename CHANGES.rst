@@ -5,7 +5,8 @@ History of zest.emailhider package
 3.1.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Make 'No uids found in request.' a warning instead of an error.
+  I see bots requesting this url.  [maurits]
 
 
 3.1.2 (2017-03-08)
