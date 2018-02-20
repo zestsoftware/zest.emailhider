@@ -38,7 +38,7 @@ script:
 # We would need to do that for jquery.pyproxy as well then.
 #   - bin/test --all
 after_success:
-  - bin/createcoverage
+  - bin/createcoverage --output-dir=htmlcov
   - pip install coveralls
   - coveralls
 
